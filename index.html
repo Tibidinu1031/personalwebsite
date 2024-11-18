@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            background-color: #0a3636;
+            padding: 1rem;
+            text-align: right;
+        }
+
+        nav a {
+            color: #ffa500;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .intro-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            color: #0a3636;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #0a3636;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .profile-image {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <div class="main-content">
+            <img src="Assets/Me.jpg" alt="Profile" class="profile-image">
+            <div class="intro-text">
+                <h1>Hello! I'm Tiberius Dinu <br> I'm the founder of Neoteq and a Y Combinator applicant <br>Welcome to my personal website!</h1>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="main-content">
+            <div class="intro-text">
+                <h1>Contact Me</h1>
+                <p>Feel free to reach out at: tiberiusdinu@neoteq.us</p>
+                <p>And to connect with me on <a href="https://www.linkedin.com/in/tiberius-dinu-51a625170/" target="_blank">LinkedIn</a></p>
+                <p>Or to schedule a call on <a href="https://calendly.com/tiberiusdinu-neoteq" target="_blank">Calendly</a></p>
+                <p>Lastly, you can check out my company <a href="https://www.neoteq.us" target="_blank">Neoteq</a></p>
+                
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add smooth scrolling to navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                window.scrollTo({
+                    top: section?.offsetTop || 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
